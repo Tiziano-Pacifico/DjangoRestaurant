@@ -40,7 +40,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-    RESTAURANT = 1
+    VENDOR = 1
     CUSTOMER = 2
     #Django usa questa sintassi perché:
 
@@ -48,7 +48,7 @@ class User(AbstractBaseUser):
     #Il secondo valore (string) è quello leggibile dall'utente (usato nei form e nell'admin Django).
 
     ROLE_CHOICE = (
-        (RESTAURANT, 'Restaurant'),
+        (VENDOR, 'Vendor'),
         (CUSTOMER, 'Customer')
     )
 
