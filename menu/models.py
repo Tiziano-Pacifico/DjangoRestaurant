@@ -36,5 +36,9 @@ class FoodItem(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    class Meta:
+         constraints = [
+            models.UniqueConstraint(fields=['vendor', 'category','slug'], name='unique_sulg_per_vendor_and_category'),
+        ]
     def __str__(self):
         return self.food_title

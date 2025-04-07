@@ -4,6 +4,8 @@
 {% block content %}
 {% include 'includes/alerts.html' %}
 
+<!-- vprofile.html -->
+
 <!-- Main Section Start -->
 <div class="main-section">
     {% include 'includes/cover.html' %}
@@ -32,7 +34,11 @@
                                                                 <li class="gal-img">
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
-                                                                            <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Logo">
+                                                                            {% if profile.profile_picture %}
+                                                                                <img class="thumbnail" src="{{profile.profile_picture.url}}" alt="Logo">
+                                                                            {% else %}
+                                                                                <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Logo">
+                                                                            {% endif %}
                                                                         </div>
                                                                     </div>
                                                                 </li>
@@ -54,7 +60,11 @@
                                                                 <li class="gal-img">
                                                                     <div class="drag-list">
                                                                         <div class="item-thumb">
-                                                                            <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover Photo">
+                                                                            {% if profile.cover_photo %}
+                                                                                <img class="thumbnail" src="{{profile.cover_photo.url}}" alt="Cover Photo">
+                                                                            {% else %}
+                                                                                <img class="thumbnail" src="{% static 'images/default-cover.png' %}" alt="Cover Photo">
+                                                                            {% endif %}
                                                                         </div>
                                                                     </div>
                                                                 </li>
