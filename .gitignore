@@ -5,7 +5,7 @@
 *.log
 *.pot
 *.pyc
-__pycache__/
+/foodOnline_main/__pycache__/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
@@ -214,3 +214,5 @@ ChatPDF
 Vision
 Full Page
 Invite & Earn
+__pycache__/
+foodOnline_main/__pycache__/settings.cpython-311.pyc
