@@ -3,6 +3,7 @@
 {% load static %}
 
 {% block content %}
+	<!-- Template: Vendor Detail -->
     <!-- Main Section Start -->
 			<div class="main-section">
 				<div 
@@ -135,8 +136,9 @@
                                                         </ul>
                                                     {% endfor %}
 												</div>
+												<!-- Informazioni usate per recuperare tramite ajax in custom.js le quantità di ogni food item per posizionarle all'interno della pagina -->
 												{% for item in cart_items %}
-													<span id="qty-{{item.foodItem.id}}" class="item_qty" data-qty="{{item.quantity}}">{{item.quantity}}</span>
+													<span id="qty-{{item.foodItem.id}}" class="item_qty d-none" data-qty="{{item.quantity}}">{{item.quantity}}</span>
 												{% endfor %}
 											</div>
 										</div>
