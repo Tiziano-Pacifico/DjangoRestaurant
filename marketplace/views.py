@@ -62,7 +62,6 @@ def add_to_cart(request, food_id=None):
                 #check if the user has alredy added that food to the cart
                 try:
                     chkCart = Cart.objects.get(user=request.user, foodItem=fooditem)
-                    print("sono qui")
                     #Increase the cart quantity
                     chkCart.quantity += 1
                     chkCart.save()
