@@ -2,20 +2,20 @@
 let autocomplete;
 
 function initAutoComplete(){
-autocomplete = new google.maps.places.Autocomplete(
-    document.getElementById('id_address'),
-    {
-        types: ['geocode', 'establishment'],
-        //default in this app is "IN" - add your country code
-        componentRestrictions: {'country': ['it']},
-    })
-// function to specify what should happen when the prediction is clicked
-autocomplete.addListener('place_changed', onPlaceChanged);
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('id_address'),
+        {
+            types: ['geocode', 'establishment'],
+            //default in this app is "IN" - add your country code
+            componentRestrictions: {'country': ['it']},
+        })
+    // function to specify what should happen when the prediction is clicked
+    autocomplete.addListener('place_changed', onPlaceChanged);
 }
 
 function onPlaceChanged (){
     var place = autocomplete.getPlace();
-
+    console.log("place api")
     // User did not select the prediction. Reset the input field or alert()
     if (!place.geometry){
         document.getElementById('id_address').placeholder = "Start typing...";
@@ -29,7 +29,7 @@ function onPlaceChanged (){
     var latitude = place.geometry.location.lat();
     var longitude = place.geometry.location.lng();
     var address = document.getElementById('id_address').value
-
+    console.log(latitude, longitude)
     $('#id_latitude').val(latitude);
     $('#id_longitude').val(longitude);
     $('#id_address').val(address);
